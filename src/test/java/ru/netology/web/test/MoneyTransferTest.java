@@ -62,7 +62,6 @@ class MoneyTransferTest {
         Assertions.assertEquals(balanceForFirstCard + enoughAmount, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID()));
         Assertions.assertEquals(balanceForSecondCard - enoughAmount, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID()));
 
-        //return everything to original state
         dashboardPage.getTransactionPage(DataHelper.getSecondCardInfo().getCardID());
         transactionPage.doTransaction(DataHelper.getFirstCardInfo().getCardNumber(), Integer.toString(enoughAmount));
     }
@@ -83,7 +82,6 @@ class MoneyTransferTest {
         Assertions.assertEquals(balanceForFirstCard + balanceForSecondCard, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID()));
         Assertions.assertEquals(0, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID()));
 
-        //return everything to original state
         dashboardPage.getTransactionPage(DataHelper.getSecondCardInfo().getCardID());
         transactionPage.doTransaction(DataHelper.getFirstCardInfo().getCardNumber(), Integer.toString(balanceForSecondCard));
     }
@@ -103,7 +101,7 @@ class MoneyTransferTest {
         var notEnoughAmount = balanceForFirstCard + balanceForFirstCard;
         transactionPage.doTransaction(DataHelper.getFirstCardInfo().getCardNumber(), Integer.toString(notEnoughAmount));
 
-        Assertions.assertEquals(balanceForFirstCard, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID()));
-        Assertions.assertEquals(balanceForSecondCard, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID()));
+        Assertions.assertEquals(balanceForFirstCard, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID());
+        Assertions.assertEquals(balanceForSecondCard, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID());
     }
 }
