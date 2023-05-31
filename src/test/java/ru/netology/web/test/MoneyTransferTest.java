@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 class MoneyTransferTest {
     @Test
-        //check if we press cancel balances are not changed
     void shouldCancelTransfer() {
         var loginPage = open("http://localhost:9999", LoginPageV2.class);
         var authInfo = DataHelper.getAuthInfo();
@@ -29,7 +28,6 @@ class MoneyTransferTest {
     }
 
     @Test
-        //check if we try to make transaction from the first card to the first card balances are not changed
     void shouldNotTransferTheSameCard() {
         var loginPage = open("http://localhost:9999", LoginPageV2.class);
         var authInfo = DataHelper.getAuthInfo();
@@ -48,7 +46,6 @@ class MoneyTransferTest {
     }
 
     @Test
-        //check if we make transaction and we have enough money transaction will happen
     void shouldTransferMoneyLessThanBalance() {
         var loginPage = open("http://localhost:9999", LoginPageV2.class);
         var authInfo = DataHelper.getAuthInfo();
@@ -71,7 +68,6 @@ class MoneyTransferTest {
     }
 
     @Test
-        //check if we make transaction and we have enough money transaction will happen
     void shouldTransferAllBalance() {
         var loginPage = open("http://localhost:9999", LoginPageV2.class);
         var authInfo = DataHelper.getAuthInfo();
@@ -93,7 +89,6 @@ class MoneyTransferTest {
     }
 
     @Test
-        //check if we make transaction and we do not have enough money transaction will not happen
     void shouldNotTransferMoneyMoreThanBalance() {
         var loginPage = open("http://localhost:9999", LoginPageV2.class);
         var authInfo = DataHelper.getAuthInfo();
