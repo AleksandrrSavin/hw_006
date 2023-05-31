@@ -101,7 +101,7 @@ class MoneyTransferTest {
         var notEnoughAmount = balanceForFirstCard + balanceForFirstCard;
         transactionPage.doTransaction(DataHelper.getFirstCardInfo().getCardNumber(), Integer.toString(notEnoughAmount));
 
-        Assertions.assertEquals(balanceForFirstCard, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID());
-        Assertions.assertEquals(balanceForSecondCard, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID());
+        Assertions.assertEquals(balanceForFirstCard, dashboardPage.getCardBalance(DataHelper.getFirstCardInfo().getCardID()));
+        Assertions.assertEquals(balanceForSecondCard, dashboardPage.getCardBalance(DataHelper.getSecondCardInfo().getCardID()));
     }
 }
